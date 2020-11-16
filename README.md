@@ -81,3 +81,12 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## Current Layouts:
+
+### SignUp
+![Signup](https://github.com/Prateek479/React-Redux-MaterialUI/blob/master/public/layouts/Screenshot%202020-11-16%20at%2014.19.06.png)
+### LogIn
+![Login](https://github.com/Prateek479/React-Redux-MaterialUI/blob/master/public/layouts/Screenshot%202020-11-16%20at%2014.19.22.png)
+### Home
+![home](https://github.com/Prateek479/React-Redux-MaterialUI/blob/master/public/layouts/Screenshot%202020-11-16%20at%2014.25.52.png)
+
