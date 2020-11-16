@@ -6,7 +6,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * [Redux-Sagas](https://redux-saga.js.org/)
 * [Material-UI](https://material-ui.com/)
 
-This bootstrap application 
+This bootstrap application with **Work in Progress**. This app will be in sync with the backend rails application from the [Rails-service](https://github.com/Prateek479/rails-service).
+
+
+## To-do/In-progress
+
+* Improving test converage
+* Integrating Oauth2 Authentications with rails serive.
+* Better Implementations for injecting sagas.
+* Improving Documentations :D 
+
 
 ## Folder Structure:
 
