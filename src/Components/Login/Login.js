@@ -6,7 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import styles from "./Login.style";
 import PasswordInput from "../Inputs/PasswordInput";
 
@@ -41,8 +41,11 @@ class Login extends React.Component {
   };
 
   render() {
-    console.log("propr", this.props);
     const { classes } = this.props;
+
+    if (this.props.redirectTo) {
+      return <Redirect to={this.props.redirectTo} />;
+    }
     return (
       <div className={classes.login}>
         <Card className={classes.root} variant="outlined">

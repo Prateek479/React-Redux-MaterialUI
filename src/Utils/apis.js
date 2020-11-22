@@ -3,7 +3,7 @@ import { makeSaveCall } from "./request";
 
 const urls = {
   login: "/api/v1/auth/sign_in",
-  signup: "/users/signup",
+  signup: "/api/v1/auth/",
 };
 
 function getEndpoint(endpoint) {

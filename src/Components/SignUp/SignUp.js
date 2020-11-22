@@ -16,6 +16,7 @@ class Signup extends React.Component {
     this.state = {
       name: "",
       email: "",
+      username: "",
       password: "",
       repeatPassword: "",
     };
@@ -24,6 +25,7 @@ class Signup extends React.Component {
     this.handleRePasswordChange = this.handleRePasswordChange.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleUserNameChange = this.handleUserNameChange.bind(this);
     this.handleClickShowPassword = this.handleClickShowPassword.bind(this);
     this.signup = this.signup.bind(this);
   }
@@ -39,6 +41,9 @@ class Signup extends React.Component {
   handleRePasswordChange = ({ target: { value } }) => {
     this.handleChange(value, "repeatPassword");
   };
+  handleUserNameChange = ({ target: { value } }) => {
+    this.handleChange(value, "username");
+  };
   handleEmailChange = ({ target: { value } }) => {
     this.handleChange(value, "email");
   };
@@ -48,7 +53,7 @@ class Signup extends React.Component {
   };
 
   signup = () => {
-    console.log("dispatch signup action", this.state);
+    this.props.signupUser(this.state);
   };
 
   handleClickShowPassword = () => {
@@ -75,6 +80,14 @@ class Signup extends React.Component {
                   id="name-input"
                   label="Name"
                   onChange={this.handleNameChange}
+                />
+              </div>
+              <div className={classes.m__b__15}>
+                <TextField
+                  className={classes.root_12}
+                  id="name-input"
+                  label="Username"
+                  onChange={this.handleUserNameChange}
                 />
               </div>
               <div className={classes.m__b__15}>
