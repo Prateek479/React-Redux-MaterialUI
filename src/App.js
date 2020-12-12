@@ -5,19 +5,20 @@ import About from "./Components/About/About";
 import Blog from "./Components/Blog/Blog";
 import Home from "./Components/Home/Home";
 import Login from "./Container/Login";
-import SignUp from "./Components/SignUp/SignUp";
+import SignUp from "./Container/SignUp";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./theme";
 import { Provider } from "react-redux";
 import store from "./store";
 
 function App() {
+  const userProfile = JSON.parse(localStorage.getItem("user"));
   return (
     <>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <Router>
-            <Header user={null} />
+            <Header user={userProfile} />
             <Switch>
               <Route path="/about" component={About} />
               <Route path="/blogs" component={Blog} />

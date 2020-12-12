@@ -1,7 +1,6 @@
 import * as userActions from "../Constants/user_actions";
 //User Login
 export function userLoginAction(data) {
-  console.log("i hit in action", data);
   return {
     type: userActions.LOGIN_USER_REQUESTED,
     data,
@@ -9,7 +8,6 @@ export function userLoginAction(data) {
 }
 
 export function userLoginSucceededAction(data) {
-  console.log("i hit in action", data);
   return {
     type: userActions.LOGIN_USER_SUCCESS,
     data,
@@ -42,5 +40,14 @@ export function userSignUpFailedAction(error) {
   return {
     type: userActions.LOGIN_USER_FAILED,
     error,
+  };
+}
+
+// User Redirect
+
+export function redirectUser(path) {
+  return {
+    type: userActions.REDIRECT_USER,
+    path,
   };
 }

@@ -3,8 +3,8 @@ import Login from "../Components/Login/Login";
 import { userLoginAction } from "../Actions/userActions";
 
 function mapStateToProps(state) {
-  const { user, isLoading, error } = state.userReducer || {};
-  return { user, isLoading, error };
+  const { user, isLoading, error, redirectTo } = state.userReducer || {};
+  return { user, isLoading, error, redirectTo };
 }
 const mapDispatchToProps = {
   loginUser: userLoginAction,

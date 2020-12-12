@@ -5,12 +5,13 @@ let initialState = {
   access_token: "",
   isLoading: false,
   error: null,
+  redirectTo: null,
 };
 
 export default function (state = initialState, action = {}) {
+  console.log("action", action);
   switch (action.type) {
     case USER_ACTIONS.LOGIN_USER_REQUESTED:
-      console.log("I hit i reducer", action);
       return {
         ...state,
         isLoading: true,
@@ -25,6 +26,11 @@ export default function (state = initialState, action = {}) {
       return {};
     case USER_ACTIONS.SIGN_UP_USER_FAILED:
       return {};
+    case USER_ACTIONS.REDIRECT_USER:
+      return {
+        ...state,
+        redirectTo: action.path.redirectTo,
+      };
 
     default:
       return state;

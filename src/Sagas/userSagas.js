@@ -5,16 +5,28 @@ import {
   userLoginFailedAction,
   userSignUpSucceededAction,
   userSignUpFailedAction,
+  redirectUser,
 } from "../Actions/userActions";
 import * as USER_ACTIONS from "../Constants/user_actions";
-import { Update } from "@material-ui/icons";
 
 export function* loginUsersSaga({ data }) {
   const responseData = yield call(loginUsers, data);
-  if (responseData.data.data) {
+  const { data: user } = responseData.data;
+  const { headers } = responseData;
+  console.log("user", user);
+  console.log("headers", headers);
+  if (users && headers) {
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("token", JSON.stringify(headers));
     yield put(
       userLoginSucceededAction({
-        responseData: responseData.data.data,
+        user: user,
+        token: headers,
+      })
+    );
+    yield put(
+      redirectUser({
+        redirectTo: "/",
       })
     );
   } else {
@@ -28,7 +40,8 @@ export function* loginUsersSaga({ data }) {
 
 export function* signupUsersSagas({ data }) {
   const responseData = yield call(signUpUsers, data);
-  if (responseData.user) {
+  console.log("responseData", responseData);
+  if (responseData) {
     yield put(
       userSignUpSucceededAction({
         responseData: responseData.user,
